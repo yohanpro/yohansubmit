@@ -2,7 +2,7 @@
 
 const Main = props => {
   return (
-    <div>
+    <div className="container">
       <h1>hello world</h1>
     </div>
   );
