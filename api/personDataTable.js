@@ -1,6 +1,5 @@
 // import conditionData from 'SyntheaDatas/condition-small.json';
 import conditionData from 'SyntheaDatas/condition_occurrence.json';
-// import visitData from 'SyntheaDatas/visit-small.json';
 import visitData from 'SyntheaDatas/visit_occurrence.json';
 
 export function getAllVisitCount(person_id) {

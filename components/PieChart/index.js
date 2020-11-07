@@ -27,7 +27,7 @@ const PersonPieChart = props => {
     return (
         <div className="pieChart-container">
             <Chart
-                title="성별 환자"
+                title="성별별 환자"
                 sortedData={genderSort}
             />
             <Chart

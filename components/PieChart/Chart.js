@@ -13,10 +13,11 @@ const Chart = props => {
     for (const [key, value] of Object.entries(sortedData)) {
         computedData.push({
             name: key,
-            y: Number((value / total).toFixed(3))
+            y: Number((value / total).toFixed(3)),
+            x: value
         });
     }
-
+    console.log('computedData', computedData);
     const options = {
         chart: {
             type: "pie",
@@ -25,10 +26,11 @@ const Chart = props => {
             plotShadow: false,
         },
         title: {
-            text: title
+            text: title,
+            margin: 5
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> {point.x}명'
         },
         accessibility: {
             point: {
@@ -37,18 +39,21 @@ const Chart = props => {
         },
         plotOptions: {
             pie: {
+                size: 150,
                 allowPointSelect: true,
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
                     format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                }
+                },
+                showInLegend: true
             }
         },
         series: [{
             name: title,
             colorByPoint: true,
-            data: computedData
+            data: computedData,
+            value: computedData.value
         }]
     };
     return (
