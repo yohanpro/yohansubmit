@@ -2,14 +2,13 @@
 import personData from "SyntheaDatas/person.json";
 import deathData from 'SyntheaDatas/death.json';
 
-// import PersonDataTable from 'components/DataTable';
-import dynamic from 'next/dynamic';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import PersonPieChart from "components/PieChart";
+import PersonDataTable from 'components/DataTable';
+
 dayjs.locale('ko');
 
-const PersonDataTable = dynamic(() => import('components/DataTable'), { ssr: false });
 
 const Main = props => {
   const { personMappedRow } = props;
