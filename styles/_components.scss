@@ -1,6 +1,6 @@
 .DataTable-container {
   width: 90%;
-  height: 45em;
+  min-height: 45em;
   margin: 5em auto;
 }
 
@@ -21,6 +21,27 @@
     justify-content: space-between;
     & > label {
       font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
+}
+
+.pieChart {
+  &-container {
+    width: 90%;
+    min-height: 45em;
+    margin: 3em auto;
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+      flex-basis: 30%;
+      border-radius: 15px;
+    }
+
+    & .highcharts-title {
+      font-size: 2em !important;
+      margin-top: 1em;
       font-weight: bold;
     }
   }

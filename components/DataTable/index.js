@@ -4,8 +4,7 @@ import PersonDetail from './PersonDetail';
 const PersonDataTable = props => {
 
     const { data } = props;
-    //전체 방문수 카운팅, 진단정보 가져오기
-    // async인 이유: 실제 작동하는 웹상에서는 비동기로 받아올 것이므로 
+
 
     const columns = [
         { selector: 'id', name: '환자ID' },
@@ -27,7 +26,6 @@ const PersonDataTable = props => {
                 pagination
                 expandableRows
                 expandableRowsComponent={<PersonDetail />}
-
             />
         </div>
 

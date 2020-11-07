@@ -6,6 +6,7 @@ const PersonDetail = ({ data }) => {
 
     const visitCount = useMemo(() => getAllVisitCount(data.id), []);
     const conditionDetail = useMemo(() => getConditionData(data.id), []);
+
     return (
         <div className="personDetail-container">
             <div ><label> 전체 방문 수 :</label>{visitCount}</div>
