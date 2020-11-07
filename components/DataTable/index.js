@@ -1,10 +1,21 @@
 import DataTable from 'react-data-table-component';
 import PersonDetail from './PersonDetail';
+import Loader from 'react-loader-spinner';
+
+import { useEffect, useState } from 'react';
+
+const CustomLoader = () => (
+    <div style={{ padding: '24px' }}>
+        <Loader type="TailSpin" color="#2BAD60" height="150" width="150" className="loader" />
+    </div>
+);
 
 const PersonDataTable = props => {
 
     const { data } = props;
 
+    const [isLoading, setLoading] = useState(true);
+    const [rows, setRows] = React.useState(data);
 
     const columns = [
         { selector: 'id', name: '환자ID' },
@@ -16,15 +27,28 @@ const PersonDataTable = props => {
         { selector: 'death', name: '사망여부', sortable: true, },
     ];
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setRows(data);
+            setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timeout);
+    }, []);
+
 
     return (
         <div className="DataTable-container">
+            {/* {isLoading && <Loader type="TailSpin" color="#2BAD60" height="150" width="150" className="loader" />} */}
             <DataTable
                 title="환자 Table Component"
                 columns={columns}
-                data={data}
+                data={rows}
                 pagination
                 expandableRows
+                progressPending={isLoading}
+                progressComponent={<CustomLoader />}
+                highlightOnHover={true}
+                expandOnRowClicked={true}
                 expandableRowsComponent={<PersonDetail />}
             />
         </div>

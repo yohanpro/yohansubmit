@@ -1,3 +1,12 @@
+.loader {
+  position: relative;
+
+  & > svg {
+    margin: 0 auto 3em;
+    display: block;
+  }
+}
+
 .DataTable-container {
   width: 90%;
   min-height: 45em;
@@ -17,6 +26,7 @@
   margin: 0.5em auto;
   & > div {
     width: 20%;
+    min-width: 25vw;
     display: flex;
     justify-content: space-between;
     & > label {

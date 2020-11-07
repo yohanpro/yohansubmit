@@ -17,7 +17,6 @@ const Chart = props => {
             x: value
         });
     }
-    console.log('computedData', computedData);
     const options = {
         chart: {
             type: "pie",
@@ -58,7 +57,6 @@ const Chart = props => {
     };
     return (
         <PieChart
-
             highcharts={Highcharts}
             options={options} />
     );

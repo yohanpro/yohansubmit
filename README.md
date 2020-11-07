@@ -102,6 +102,10 @@ $ npm run start
 - `useMemo` 훅을 사용하여 추후 다시 계산과정 최소화.
 <hr>
 
+### spinner 컴포넌트 구현
+
+1000개 정도되는 데이터 양이라 약 1초 정도의 로딩시간이 걸려서 짧은편이지만, 대기시간동안 spinner를 보여주는 UX 삽입
+
 ### Pie Chart 컴포넌트
 
 사용 라이브러리 : `highcharts-react`
