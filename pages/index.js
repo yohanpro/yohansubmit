@@ -29,17 +29,18 @@ const Main = props => {
 
 
 export async function getStaticProps(context) {
-  const personMappedRow = personData.person.map(({ person_id, gender_source_value, birth_datetime, race_source_value, ethnicity_source_value }) => {
-    return {
-      id: person_id,
-      gender: gender_source_value === 'F' ? '여성' : '남성',
-      birthDate: dayjs(birth_datetime).format('YYYY년 M월 D일'),
-      race: race_source_value,
-      age: dayjs().year() - dayjs(birth_datetime).year(),
-      ethnicity: ethnicity_source_value,
-      death: deathData.death.findIndex(data => data.person_id === person_id) !== -1 ? '사망' : '생존'
-    };
-  });
+  const personMappedRow = personData.person.map(
+    ({ person_id, gender_source_value, birth_datetime, race_source_value, ethnicity_source_value }) => {
+      return {
+        id: person_id,
+        gender: gender_source_value === 'F' ? '여성' : '남성',
+        birthDate: dayjs(birth_datetime).format('YYYY년 M월 D일'),
+        race: race_source_value,
+        age: dayjs().year() - dayjs(birth_datetime).year(),
+        ethnicity: ethnicity_source_value,
+        death: deathData.death.findIndex(data => data.person_id === person_id) !== -1 ? '사망' : '생존'
+      };
+    });
   return {
     props: { personMappedRow },
   };
