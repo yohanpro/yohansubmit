@@ -1,5 +1,3 @@
-import Highcharts from 'highcharts/highstock';
-import PieChart from 'highcharts-react-official';
 import Chart from './Chart';
 import { useMemo } from 'react';
 
